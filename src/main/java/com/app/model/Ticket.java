@@ -1,14 +1,25 @@
 package com.app.model;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
+@Entity
+@RequiredArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class Ticket {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long userId;
     private String ticketType;
     private String ticketClass;
-    private LocalDateTime creationDate;
-    private LocalDate startDate;
     private int price;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }
