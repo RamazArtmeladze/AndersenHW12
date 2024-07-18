@@ -1,12 +1,11 @@
 -- Create User table
-CREATE TABLE IF NOT EXISTS users (
+CREATE TABLE users (
     user_id BIGINT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL
 );
 
--- Create Ticket table
-CREATE TABLE IF NOT EXISTS tickets (
+CREATE TABLE tickets (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     ticket_type VARCHAR(255) NOT NULL,
     ticket_class VARCHAR(255) NOT NULL,
